@@ -49,6 +49,10 @@
     <Compile Include="Model\FilmingLocation.cs" />
     <Compile Include="Model\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ActorRepository.cs" />
+    <Compile Include="Repository\DirectorRepository.cs" />
+    <Compile Include="Repository\FilmingLocationRepository.cs" />
+    <Compile Include="Repository\MovieRepository.cs" />
     <Compile Include="Util\UrlUtil.cs" />
   </ItemGroup>
   <ItemGroup>
