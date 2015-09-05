@@ -4,7 +4,7 @@ namespace CinemalyticsCSharpSDK.Model
 {
     public class Movie
     {
-        public int Id { get; set; }
+        public String Id { get; set; }
         public String ImdbId { get; set; }
         public String OriginalTitle { get; set; }
         public String Title { get; set; }

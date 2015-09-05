@@ -7,7 +7,7 @@ namespace CinemalyticsCSharpSDK.Model
 {
     public class FilmingLocation
     {
-        public int Id { get; set; }
+        public String Id { get; set; }
         public String Name { get; set; }
         public String State { get; set; }
         public String Country { get; set; }

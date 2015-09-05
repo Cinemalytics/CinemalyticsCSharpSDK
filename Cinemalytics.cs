@@ -31,5 +31,16 @@ namespace CinemalyticsCSharpSDK
             return mr;
         }
 
+        /// <summary>
+        /// Gets the ActorRepository singleton instance. ActorRepository is endpoint for all actor related queries
+        /// </summary>
+        /// <returns></returns>
+        public ActorRepository GetActorRepositoryInstance()
+        {
+            ActorRepository ar = ActorRepository.Instance;
+            ar.SetAuthToken(_authToken);
+            return ar;
+        }  
+
     }
 }

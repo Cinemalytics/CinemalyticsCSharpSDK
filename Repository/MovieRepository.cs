@@ -39,7 +39,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// </summary>
         /// <param name="movieId"></param>
         /// <returns></returns>
-        public Movie GetMovieById(int movieId)
+        public Movie GetMovieById(String movieId)
         {
             String url = "http://api.cinemalytics.com/v1/movie/id/" + movieId + "?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
@@ -78,7 +78,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// </summary>
         /// <param name="movieId"></param>
         /// <returns></returns>
-        public List<Actor> GetActorsForMovie(int movieId)
+        public List<Actor> GetActorsForMovie(String movieId)
         {
             String url = " http://api.cinemalytics.com/v1/movie/" + movieId + "/actors/?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
@@ -91,7 +91,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// </summary>
         /// <param name="movieId"></param>
         /// <returns></returns>
-        public List<Director> GetDirectorsForMovie(int movieId)
+        public List<Director> GetDirectorsForMovie(String movieId)
         {
             String url = " http://api.cinemalytics.com/v1/movie/" + movieId + "/directors/?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
@@ -104,12 +104,13 @@ namespace CinemalyticsCSharpSDK.Repository
         /// </summary>
         /// <param name="movieId"></param>
         /// <returns></returns>
-        public List<FilmingLocation> GetFilmingLocationsForMovie(int movieId)
+        public List<FilmingLocation> GetFilmingLocationsForMovie(String movieId)
         {
             String url = " http://api.cinemalytics.com/v1/movie/" + movieId + "/locations/?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<List<FilmingLocation>>(jsonResponse);
-        } 
+        }
+       
     }
 }
