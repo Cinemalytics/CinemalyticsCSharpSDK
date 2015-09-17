@@ -11,7 +11,6 @@ namespace CinemalyticsCSharpSDK.Repository
     public class ActorRepository
     {
         private static ActorRepository _instance;
-
         private static String _authToken = null;
 
         private ActorRepository() { }
