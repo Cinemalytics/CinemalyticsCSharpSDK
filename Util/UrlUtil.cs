@@ -22,5 +22,33 @@ namespace CinemalyticsCSharpSDK.Util
             StreamReader streamReader = new StreamReader(responseStream);
             return streamReader.ReadToEnd();
         }
+
+        public static String MakeGetCall(String url, String postData)
+        {
+            var request = (HttpWebRequest)WebRequest.Create(url);
+
+            var data = Encoding.ASCII.GetBytes(postData);
+
+            request.Method = "POST";
+            request.ContentType = "application/json";
+            request.ContentLength = data.Length;
+
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(data, 0, data.Length);
+            }
+
+            var response = (HttpWebResponse)request.GetResponse();
+
+            Stream responseStream = response.GetResponseStream();
+
+            if (responseStream == null)
+            {
+                return "{}";
+            }
+
+            StreamReader streamReader = new StreamReader(responseStream);
+            return streamReader.ReadToEnd();
+        }
     }
 }

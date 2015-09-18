@@ -124,6 +124,17 @@ namespace CinemalyticsCSharpSDK.Repository
 
             return JsonConvert.DeserializeObject<List<Song>>(jsonResponse);
         }
+
+        /// <summary>
+        /// Adds rating for the movie
+        /// </summary>
+        /// <param name="ratingMetaJson"></param>
+        /// <returns></returns>
+        public String AddRating(String ratingMetaJson)
+        {
+            String url = " http://api.cinemalytics.com/v1/movie/addrating/?auth_token=" + _authToken;
+            return UrlUtil.MakeGetCall(url, ratingMetaJson);            
+        }
        
     }
 }

@@ -40,7 +40,50 @@ namespace CinemalyticsCSharpSDK
             ActorRepository ar = ActorRepository.Instance;
             ar.SetAuthToken(_authToken);
             return ar;
-        }  
+        }
 
+        /// <summary>
+        /// Gets the DirectorRepository singleton instance. DirectorRepository is endpoint for all director related queries
+        /// </summary>
+        /// <returns></returns>
+        public DirectorRepository GetDirectorRepositoryInstance()
+        {
+            DirectorRepository dr = DirectorRepository.Instance;
+            dr.SetAuthToken(_authToken);
+            return dr;
+        }
+
+        /// <summary>
+        /// Gets the SongRepository singleton instance. SongRepository is endpoint for all song related queries
+        /// </summary>
+        /// <returns></returns>
+        public SongRepository GetSongRepositoryInstance()
+        {
+            SongRepository sr = SongRepository.Instance;
+            sr.SetAuthToken(_authToken);
+            return sr;
+        }
+
+        /// <summary>
+        /// Gets the SingerRepository singleton instance. SingerRepository is endpoint for all singer related queries
+        /// </summary>
+        /// <returns></returns>
+        public SingerRepository GetSingerRepositoryInstance()
+        {
+            SingerRepository sr = SingerRepository.Instance;
+            sr.SetAuthToken(_authToken);
+            return sr;
+        }
+
+        /// <summary>
+        /// Gets the AnalyticsRepository singleton instance. AnalyticsRepository is endpoint for all cinema analytics related queries
+        /// </summary>
+        /// <returns></returns>
+        public AnalyticsRepository GetAnalyticsRepositoryInstance()
+        {
+            AnalyticsRepository ar = AnalyticsRepository.Instance;
+            ar.SetAuthToken(_authToken);
+            return ar;
+        }
     }
 }

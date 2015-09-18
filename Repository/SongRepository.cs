@@ -47,5 +47,18 @@ namespace CinemalyticsCSharpSDK.Repository
 
             return JsonConvert.DeserializeObject<Song>(jsonResponse);
         }
+
+        /// <summary>
+        /// Gets singers for song
+        /// </summary>
+        /// <param name="songId"></param>
+        /// <returns></returns>
+        public List<Singer> GetSingersForSong(String songId)
+        {
+            String url = "http://api.cinemalytics.com/v1/song/" + songId + "/singers/?auth_token=" + _authToken;
+            String jsonResponse = UrlUtil.MakeGetCall(url);
+
+            return JsonConvert.DeserializeObject<List<Singer>>(jsonResponse);
+        }
     }
 }

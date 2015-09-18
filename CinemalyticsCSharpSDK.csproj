@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cinemalytics.cs" />
+    <Compile Include="Dto\RatingMeta.cs" />
     <Compile Include="Model\Actor.cs" />
     <Compile Include="Model\Director.cs" />
     <Compile Include="Model\FilmingLocation.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="Model\Song.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\ActorRepository.cs" />
+    <Compile Include="Repository\AnalyticsRepository.cs" />
     <Compile Include="Repository\DirectorRepository.cs" />
     <Compile Include="Repository\FilmingLocationRepository.cs" />
     <Compile Include="Repository\MovieRepository.cs" />
