@@ -54,7 +54,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <returns></returns>
         public List<Movie> GetMovieByTitle(String title)
         {
-            String url = " http://api.cinemalytics.com/v1/movie/title/" + title + "/?auth_token=" + _authToken;
+            String url = " http://api.cinemalytics.com/v1/movie/title/?value=" + title + "&auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<List<Movie>>(jsonResponse);
