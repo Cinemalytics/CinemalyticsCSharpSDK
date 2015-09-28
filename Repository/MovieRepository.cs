@@ -74,6 +74,32 @@ namespace CinemalyticsCSharpSDK.Repository
         }
 
         /// <summary>
+        /// Gets movies released this week
+        /// </summary>
+        /// <param name="year"></param>
+        /// <returns></returns>
+        public List<Movie> GetReleasedThisWeekMovies()
+        {
+            String url = " http://api.cinemalytics.com/v1//movie/releasedthisweek/?auth_token=" + _authToken;
+            String jsonResponse = UrlUtil.MakeGetCall(url);
+
+            return JsonConvert.DeserializeObject<List<Movie>>(jsonResponse);
+        }
+
+        /// <summary>
+        /// Gets movies getting released on next Thursday/Friday
+        /// </summary>
+        /// <param name="year"></param>
+        /// <returns></returns>
+        public List<Movie> GetNextChangeMovies()
+        {
+            String url = " http://api.cinemalytics.com/v1//movie/NextChange/?auth_token=" + _authToken;
+            String jsonResponse = UrlUtil.MakeGetCall(url);
+
+            return JsonConvert.DeserializeObject<List<Movie>>(jsonResponse);
+        }
+
+        /// <summary>
         /// Gets all actors who were casted in the movie
         /// </summary>
         /// <param name="movieId"></param>
