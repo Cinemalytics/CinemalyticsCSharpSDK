@@ -49,6 +49,7 @@
     <Compile Include="Model\Director.cs" />
     <Compile Include="Model\FilmingLocation.cs" />
     <Compile Include="Model\Movie.cs" />
+    <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Singer.cs" />
     <Compile Include="Model\Song.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Repository\DirectorRepository.cs" />
     <Compile Include="Repository\FilmingLocationRepository.cs" />
     <Compile Include="Repository\MovieRepository.cs" />
+    <Compile Include="Repository\PersonRepository.cs" />
     <Compile Include="Repository\SingerRepository.cs" />
     <Compile Include="Repository\SongRepository.cs" />
     <Compile Include="Util\UrlUtil.cs" />

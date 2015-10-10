@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using CinemalyticsCSharpSDK.Model;
 using CinemalyticsCSharpSDK.Repository;
-using CinemalyticsCSharpSDK.Util;
-using Newtonsoft.Json;
 
 namespace CinemalyticsCSharpSDK
 {
@@ -29,6 +25,17 @@ namespace CinemalyticsCSharpSDK
             MovieRepository mr = MovieRepository.Instance;
             mr.SetAuthToken(_authToken);
             return mr;
+        }
+
+        /// <summary>
+        /// Gets the PersonRepository singleton instance. PersonRepository is endpoint for all person related queries
+        /// </summary>
+        /// <returns></returns>
+        public PersonRepository GetPersonRepositoryInstance()
+        {
+            PersonRepository pr = PersonRepository.Instance;
+            pr.SetAuthToken(_authToken);
+            return pr;
         }
 
         /// <summary>

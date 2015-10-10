@@ -41,7 +41,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// </summary>
         /// <param name="actorId"></param>
         /// <returns></returns>
-        public Actor GetMovieById(String actorId)
+        public Actor GetActorById(String actorId)
         {
             String url = "http://api.cinemalytics.com/v1/actor/id/" + actorId + "?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
@@ -52,7 +52,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <summary>
         /// Gets actor by name
         /// </summary>
-        /// <param name="actorId"></param>
+        /// <param name="name"></param>
         /// <returns></returns>
         public Actor GetActorByName(String name)
         {
