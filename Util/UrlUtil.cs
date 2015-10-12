@@ -12,7 +12,7 @@ namespace CinemalyticsCSharpSDK.Util
         public static String MakeGetCall(String url)
         {
             var request = (HttpWebRequest)WebRequest.Create(url);
-            request.Timeout = 5000;
+            request.Timeout = 10000;
             Stream responseStream = ((HttpWebResponse)request.GetResponse()).GetResponseStream();
 
             if (responseStream == null)
@@ -27,7 +27,7 @@ namespace CinemalyticsCSharpSDK.Util
         public static String MakeGetCall(String url, String postData)
         {
             var request = (HttpWebRequest)WebRequest.Create(url);
-            request.Timeout = 5000;
+            request.Timeout = 10000;
 
             var data = Encoding.ASCII.GetBytes(postData);
 
