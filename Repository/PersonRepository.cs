@@ -54,12 +54,12 @@ namespace CinemalyticsCSharpSDK.Repository
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public Person GetPersonByName(String name)
+        public List<Person> GetPersonByName(String name)
         {
             String url = "http://api.cinemalytics.com/v1/person/name/" + name + "?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
-            return JsonConvert.DeserializeObject<Person>(jsonResponse);
+            return JsonConvert.DeserializeObject<List<Person>>(jsonResponse);
         }
     
     }

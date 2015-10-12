@@ -10,9 +10,10 @@ namespace CinemalyticsCSharpSDK.Util
     internal class UrlUtil
     {
         public static String MakeGetCall(String url)
-        {       
-            var req = (HttpWebRequest) WebRequest.Create(url);
-            Stream responseStream = ((HttpWebResponse) req.GetResponse()).GetResponseStream();
+        {
+            var request = (HttpWebRequest)WebRequest.Create(url);
+            request.Timeout = 5000;
+            Stream responseStream = ((HttpWebResponse)request.GetResponse()).GetResponseStream();
 
             if (responseStream == null)
             {
@@ -26,6 +27,7 @@ namespace CinemalyticsCSharpSDK.Util
         public static String MakeGetCall(String url, String postData)
         {
             var request = (HttpWebRequest)WebRequest.Create(url);
+            request.Timeout = 5000;
 
             var data = Encoding.ASCII.GetBytes(postData);
 
