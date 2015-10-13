@@ -13,15 +13,20 @@ namespace CinemalyticsCSharpSDK.Util
         {
             var request = (HttpWebRequest)WebRequest.Create(url);
             request.Timeout = 10000;
-            Stream responseStream = ((HttpWebResponse)request.GetResponse()).GetResponseStream();
 
-            if (responseStream == null)
+            using (var response = request.GetResponse())
             {
-                return "{}";
-            }
+                Stream responseStream = ((HttpWebResponse)response).GetResponseStream();
 
-            StreamReader streamReader = new StreamReader(responseStream);
-            return streamReader.ReadToEnd();
+                if (responseStream == null)
+                {
+                    return "{}";
+                }
+                StreamReader streamReader = new StreamReader(responseStream);
+                String responseJson = streamReader.ReadToEnd();
+                streamReader.Close();
+                return responseJson;
+            }
         }
 
         public static String MakeGetCall(String url, String postData)
@@ -40,17 +45,19 @@ namespace CinemalyticsCSharpSDK.Util
                 stream.Write(data, 0, data.Length);
             }
 
-            var response = (HttpWebResponse)request.GetResponse();
-
-            Stream responseStream = response.GetResponseStream();
-
-            if (responseStream == null)
+            using (var response = request.GetResponse())
             {
-                return "{}";
-            }
+                Stream responseStream = ((HttpWebResponse)response).GetResponseStream();
 
-            StreamReader streamReader = new StreamReader(responseStream);
-            return streamReader.ReadToEnd();
+                if (responseStream == null)
+                {
+                    return "{}";
+                }
+                StreamReader streamReader = new StreamReader(responseStream);
+                String responseJson = streamReader.ReadToEnd();
+                streamReader.Close();
+                return responseJson;
+            }
         }
     }
 }
