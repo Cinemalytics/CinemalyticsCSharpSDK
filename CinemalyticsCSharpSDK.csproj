@@ -45,7 +45,8 @@
   <ItemGroup>
     <Compile Include="Cinemalytics.cs" />
     <Compile Include="Converter\CountToPersonMappingConverter.cs" />
-    <Compile Include="Dto\RatingMeta.cs" />
+    <Compile Include="Dto\RatingMovieMeta.cs" />
+    <Compile Include="Dto\RatingPersonMeta.cs" />
     <Compile Include="Model\Actor.cs" />
     <Compile Include="Model\Director.cs" />
     <Compile Include="Model\FilmingLocation.cs" />

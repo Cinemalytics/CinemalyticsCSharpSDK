@@ -5,12 +5,12 @@ using System.Text;
 
 namespace CinemalyticsCSharpSDK.Dto
 {
-    public class RatingMeta
+    public class RatingMovieMeta
     {
         public String MovieId { get; set; }
         public String Rating { get; set; }
 
-        public RatingMeta(String movieId, String rating)
+        public RatingMovieMeta(String movieId, String rating)
         {
             MovieId = movieId;
             Rating = rating;
