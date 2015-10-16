@@ -11,8 +11,7 @@ namespace CinemalyticsCSharpSDK.Model
         public String Description { get; set; }
         public String Country { get; set; }
         public String Region { get; set; }
-        public String Genre { get; set; }
-        public int RatingCount { get; set; }
+        public String Genre { get; set; }        
         public float Rating { get; set; }
         public String CensorRating { get; set; }
         public String ReleaseDate { get; set; }
