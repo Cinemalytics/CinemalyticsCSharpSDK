@@ -9,6 +9,8 @@ namespace CinemalyticsCSharpSDK.Model
         public String OriginalTitle { get; set; }
         public String Title { get; set; }
         public String Description { get; set; }
+        public String TrailerLink { get; set; }
+        public String TrailerEmbedCode { get; set; }
         public String Country { get; set; }
         public String Region { get; set; }
         public String Genre { get; set; }
