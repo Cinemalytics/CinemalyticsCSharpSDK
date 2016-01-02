@@ -47,6 +47,18 @@ namespace CinemalyticsCSharpSDK.Repository
         }
 
         /// <summary>
+        /// Gets top grosser movies
+        /// </summary>        
+        /// <returns></returns>
+        public List<Movie> GetTopGrosserMovies()
+        {
+            String url = "http://api.cinemalytics.com/v1/analytics/TopGrosserMovies/?auth_token=" + _authToken;
+            String jsonResponse = UrlUtil.MakeGetCall(url);
+
+            return JsonConvert.DeserializeObject<List<Movie>>(jsonResponse);
+        }
+
+        /// <summary>
         /// Gets 10 male actors sorted by highest number of movies count
         /// </summary>        
         /// <returns></returns>
