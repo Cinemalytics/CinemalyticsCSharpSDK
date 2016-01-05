@@ -52,7 +52,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <returns></returns>
         public List<Movie> GetTopGrosserMovies()
         {
-            String url = "http://api.cinemalytics.com/v1/analytics/TopGrosserMovies/?auth_token=" + _authToken;
+            String url = "http://api.cinemalytics.com/v1/analytics/TopGrossedMovies/?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<List<Movie>>(jsonResponse);
