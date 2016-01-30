@@ -93,7 +93,19 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <returns></returns>
         public List<Movie> GetNextChangeMovies()
         {
-            String url = " http://api.cinemalytics.com/v1//movie/NextChange/?auth_token=" + _authToken;
+            String url = " http://api.cinemalytics.com/v1//movie/nextchange/?auth_token=" + _authToken;
+            String jsonResponse = UrlUtil.MakeGetCall(url);
+
+            return JsonConvert.DeserializeObject<List<Movie>>(jsonResponse);
+        }
+
+        /// <summary>
+        /// Gets movies getting released in future
+        /// </summary>       
+        /// <returns></returns>
+        public List<Movie> GetUpcomingMovies()
+        {
+            String url = " http://api.cinemalytics.com/v1//movie/upcoming/?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<List<Movie>>(jsonResponse);
