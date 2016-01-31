@@ -42,7 +42,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <returns></returns>
         public Singer GetSingerById(String singerId)
         {
-            String url = "http://api.cinemalytics.com/v1/singer/id/" + singerId + "?auth_token=" + _authToken;
+            String url = "https://api.cinemalytics.com/v1/singer/id/" + singerId + "?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<Singer>(jsonResponse);

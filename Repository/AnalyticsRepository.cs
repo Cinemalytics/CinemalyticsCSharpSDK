@@ -40,7 +40,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <returns></returns>
         public List<Movie> GetTopMovies()
         {
-            String url = "http://api.cinemalytics.com/v1/analytics/TopMovies/?auth_token=" + _authToken;
+            String url = "https://api.cinemalytics.com/v1/analytics/TopMovies/?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<List<Movie>>(jsonResponse);
@@ -52,7 +52,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <returns></returns>
         public List<Movie> GetTopGrosserMovies()
         {
-            String url = "http://api.cinemalytics.com/v1/analytics/TopGrossedMovies/?auth_token=" + _authToken;
+            String url = "https://api.cinemalytics.com/v1/analytics/TopGrossedMovies/?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<List<Movie>>(jsonResponse);
@@ -64,7 +64,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <returns></returns>
         public List<KeyValuePair<Int32, Person>> GetMaleActorsByHighestMoviesCount()
         {
-            String url = "http://api.cinemalytics.com/v1/analytics/MaleActorsByHighestMovies/?auth_token=" + _authToken;
+            String url = "https://api.cinemalytics.com/v1/analytics/MaleActorsByHighestMovies/?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<List<KeyValuePair<Int32, Person>>>(jsonResponse, new CountToPersonMappingConverter());
@@ -76,7 +76,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <returns></returns>
         public List<KeyValuePair<Int32, Person>> GetFemaleActorsByHighestMoviesCount()
         {
-            String url = "http://api.cinemalytics.com/v1/analytics/FemaleActorsByHighestMovies/?auth_token=" + _authToken;
+            String url = "https://api.cinemalytics.com/v1/analytics/FemaleActorsByHighestMovies/?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<List<KeyValuePair<Int32, Person>>>(jsonResponse, new CountToPersonMappingConverter());

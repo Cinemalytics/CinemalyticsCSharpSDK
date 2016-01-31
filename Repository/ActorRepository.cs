@@ -43,7 +43,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <returns></returns>
         public Actor GetActorById(String actorId)
         {
-            String url = "http://api.cinemalytics.com/v1/actor/id/" + actorId + "?auth_token=" + _authToken;
+            String url = "https://api.cinemalytics.com/v1/actor/id/" + actorId + "?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<Actor>(jsonResponse);
@@ -56,7 +56,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <returns></returns>
         public Actor GetActorByName(String name)
         {
-            String url = "http://api.cinemalytics.com/v1/actor/name/" + name + "?auth_token=" + _authToken;
+            String url = "https://api.cinemalytics.com/v1/actor/name/" + name + "?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<Actor>(jsonResponse);
@@ -69,7 +69,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <returns></returns>
         public List<Movie> GetMoviesForActorById(String actorId)
         {
-            String url = "http://api.cinemalytics.com/v1/actor/" + actorId + "/movies?auth_token=" + _authToken;
+            String url = "https://api.cinemalytics.com/v1/actor/" + actorId + "/movies?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<List<Movie>>(jsonResponse);
