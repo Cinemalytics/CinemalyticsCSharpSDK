@@ -164,6 +164,19 @@ namespace CinemalyticsCSharpSDK.Repository
         }
 
         /// <summary>
+        /// Gets all songs for the movie
+        /// </summary>
+        /// <param name="genre"></param>
+        /// <returns></returns>
+        public List<MovieExtendedWithLinks> GetMoviesWithLinks(String genre)
+        {
+            String url = " https://api.cinemalytics.com/v1/movie/fullmovies/?genre=" + genre + "&auth_token=" + _authToken;
+            String jsonResponse = UrlUtil.MakeGetCall(url);
+
+            return JsonConvert.DeserializeObject<List<MovieExtendedWithLinks>>(jsonResponse);
+        }
+
+        /// <summary>
         /// Adds rating for the movie
         /// </summary>
         /// <param name="ratingMetaJson"></param>
