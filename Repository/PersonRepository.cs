@@ -43,7 +43,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <returns></returns>
         public Person GetPersonById(String personId)
         {
-            String url = "https://api.cinemalytics.com/v1/person/id/" + personId + "?auth_token=" + _authToken;
+            String url = "http://api.cinemalytics.in/v2/person/id/" + personId + "?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<Person>(jsonResponse);
@@ -56,7 +56,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <returns></returns>
         public List<Person> GetPersonByName(String name)
         {
-            String url = "https://api.cinemalytics.com/v1/person/name/" + name + "?auth_token=" + _authToken;
+            String url = "http://api.cinemalytics.in/v2/person/name/" + name + "?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<List<Person>>(jsonResponse);
@@ -69,7 +69,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <returns></returns>
         public String AddRating(String ratingMetaJson)
         {
-            String url = "https://api.cinemalytics.com/v1/person/addrating/?auth_token=" + _authToken;
+            String url = "http://api.cinemalytics.in/v2/person/addrating/?auth_token=" + _authToken;
             return UrlUtil.MakeGetCall(url, ratingMetaJson);
         }
     
