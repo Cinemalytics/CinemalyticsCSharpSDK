@@ -42,7 +42,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <returns></returns>
         public Song GetSongById(String songId)
         {
-            String url = "https://api.cinemalytics.com/v1/song/id/" + songId + "?auth_token=" + _authToken;
+            String url = "http://api.cinemalytics.in/v2/song/id/" + songId + "?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<Song>(jsonResponse);
@@ -55,7 +55,7 @@ namespace CinemalyticsCSharpSDK.Repository
         /// <returns></returns>
         public List<Singer> GetSingersForSong(String songId)
         {
-            String url = "https://api.cinemalytics.in/v2/song/" + songId + "/singers/?auth_token=" + _authToken;
+            String url = "http://api.cinemalytics.in/v2/song/" + songId + "/singers/?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<List<Singer>>(jsonResponse);
