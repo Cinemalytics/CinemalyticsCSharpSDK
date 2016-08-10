@@ -22,5 +22,7 @@ namespace CinemalyticsCSharpSDK.Model
         public long Budget { get; set; }
         public long Revenue { get; set; }
         public String PosterPath { get; set; }
+        public String LastUpdateTime { get; set; }
+        public int TotalCriticReviews { get; set; }
     }
 }
