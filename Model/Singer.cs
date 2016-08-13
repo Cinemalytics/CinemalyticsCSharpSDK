@@ -17,5 +17,10 @@ namespace CinemalyticsCSharpSDK.Model
             set { this._profilePath = "https://s3-ap-southeast-1.amazonaws.com/cinemalytics/singer/" + value; }
         }
         public String Gender { get; set; }
+        public String DateOfBirth { get; set; }
+        public String BirthPlace { get; set; }
+        public String OfficialWebsite { get; set; }
+        public String OfficialFacebookPage { get; set; }
+        public String OfficialTwitterPage { get; set; }
     }
 }
