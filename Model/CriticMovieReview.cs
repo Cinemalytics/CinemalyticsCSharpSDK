@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace CinemalyticsCSharpSDK.Model
 {
-    public class MovieReview
+    public class CriticMovieReview
     {
         public int Id { get; set; }
         public String MovieId { get; set; }
