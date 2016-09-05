@@ -148,20 +148,7 @@ namespace CinemalyticsCSharpSDK.Repository
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
             return JsonConvert.DeserializeObject<List<FilmingLocation>>(jsonResponse);
-        }
-
-        /// <summary>
-        /// Gets all songs for the movie
-        /// </summary>
-        /// <param name="movieId"></param>
-        /// <returns></returns>
-        public List<Song> GetSongsForMovie(String movieId)
-        {
-            String url = " http://api.cinemalytics.in/v2/movie/" + movieId + "/songs/?auth_token=" + _authToken;
-            String jsonResponse = UrlUtil.MakeGetCall(url);
-
-            return JsonConvert.DeserializeObject<List<Song>>(jsonResponse);
-        }
+        }        
 
         /// <summary>
         /// Gets all movies' details with full movie links information for the provided genre
