@@ -11,5 +11,6 @@ namespace CinemalyticsCSharpSDK.Model
         public String YouTubeVideoId { get; set; }
         public String YouTubeLink { get; set; }
         public String YouTubeEmbed { get; set; }
+        public String YouTubeReleaseDate { get; set; }
     }
 }
