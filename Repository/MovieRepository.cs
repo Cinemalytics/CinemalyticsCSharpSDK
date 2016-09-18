@@ -177,6 +177,18 @@ namespace CinemalyticsCSharpSDK.Repository
         }
 
         /// <summary>
+        /// Gets latest trailers
+        /// </summary>        
+        /// <returns></returns>
+        public List<Movie> GetLatestTrailers()
+        {
+            String url = " http://api.cinemalytics.in/v2/movie/latest-trailers/?auth_token=" + _authToken;
+            String jsonResponse = UrlUtil.MakeGetCall(url);
+
+            return JsonConvert.DeserializeObject<List<Movie>>(jsonResponse);
+        }
+
+        /// <summary>
         /// Adds rating for the movie
         /// </summary>
         /// <param name="ratingMetaJson"></param>

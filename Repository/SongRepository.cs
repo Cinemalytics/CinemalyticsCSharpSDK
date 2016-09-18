@@ -73,5 +73,17 @@ namespace CinemalyticsCSharpSDK.Repository
 
             return JsonConvert.DeserializeObject<List<Singer>>(jsonResponse);
         }
+
+        /// <summary>
+        /// Gets latest songs
+        /// </summary>        
+        /// <returns></returns>
+        public List<Song> GetLatestSongs()
+        {
+            String url = "http://api.cinemalytics.in/v2/song/latest-songs/?auth_token=" + _authToken;
+            String jsonResponse = UrlUtil.MakeGetCall(url);
+
+            return JsonConvert.DeserializeObject<List<Song>>(jsonResponse);
+        }
     }
 }
