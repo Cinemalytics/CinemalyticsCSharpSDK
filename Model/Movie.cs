@@ -18,6 +18,7 @@ namespace CinemalyticsCSharpSDK.Model
         public float Rating { get; set; }
         public String CensorRating { get; set; }
         public String ReleaseDate { get; set; }
+        public int ReleaseYear { get; set; }        
         public int Runtime { get; set; }
         public long Budget { get; set; }
         public long Revenue { get; set; }

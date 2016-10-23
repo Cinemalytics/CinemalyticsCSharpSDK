@@ -116,12 +116,12 @@ namespace CinemalyticsCSharpSDK.Repository
         /// </summary>
         /// <param name="movieId"></param>
         /// <returns></returns>
-        public List<Actor> GetActorsForMovie(String movieId)
+        public List<Person> GetActorsForMovie(String movieId)
         {
             String url = " http://api.cinemalytics.in/v2/movie/" + movieId + "/actors/?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
-            return JsonConvert.DeserializeObject<List<Actor>>(jsonResponse);
+            return JsonConvert.DeserializeObject<List<Person>>(jsonResponse);
         }
 
         /// <summary>
@@ -129,12 +129,12 @@ namespace CinemalyticsCSharpSDK.Repository
         /// </summary>
         /// <param name="movieId"></param>
         /// <returns></returns>
-        public List<Director> GetDirectorsForMovie(String movieId)
+        public List<Person> GetDirectorsForMovie(String movieId)
         {
             String url = " http://api.cinemalytics.in/v2/movie/" + movieId + "/directors/?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
-            return JsonConvert.DeserializeObject<List<Director>>(jsonResponse);
+            return JsonConvert.DeserializeObject<List<Person>>(jsonResponse);
         }
 
         /// <summary>

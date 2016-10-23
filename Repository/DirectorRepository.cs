@@ -40,12 +40,12 @@ namespace CinemalyticsCSharpSDK.Repository
         /// </summary>
         /// <param name="directorId"></param>
         /// <returns></returns>
-        public Director GetDirectorById(String directorId)
+        public Person GetDirectorById(String directorId)
         {
             String url = "http://api.cinemalytics.in/v2/director/id/" + directorId + "?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
-            return JsonConvert.DeserializeObject<Director>(jsonResponse);
+            return JsonConvert.DeserializeObject<Person>(jsonResponse);
         }
 
         /// <summary>
@@ -53,12 +53,12 @@ namespace CinemalyticsCSharpSDK.Repository
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public Director GetDirectorByName(String name)
+        public Person GetDirectorByName(String name)
         {
             String url = "http://api.cinemalytics.in/v2/director/name/" + name + "?auth_token=" + _authToken;
             String jsonResponse = UrlUtil.MakeGetCall(url);
 
-            return JsonConvert.DeserializeObject<Director>(jsonResponse);
+            return JsonConvert.DeserializeObject<Person>(jsonResponse);
         }
 
         /// <summary>

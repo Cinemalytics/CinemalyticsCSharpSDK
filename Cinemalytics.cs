@@ -92,5 +92,16 @@ namespace CinemalyticsCSharpSDK
             ar.SetAuthToken(_authToken);
             return ar;
         }
+
+        /// <summary>
+        /// Gets the AnalyticsRepository singleton instance. AnalyticsRepository is endpoint for all cinema analytics related queries
+        /// </summary>
+        /// <returns></returns>
+        public QuestionRepository GetQuestionRepositoryInstance()
+        {
+            QuestionRepository qr = QuestionRepository.Instance;
+            qr.SetAuthToken(_authToken);
+            return qr;
+        }
     }
 }
