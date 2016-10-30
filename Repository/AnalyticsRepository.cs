@@ -59,6 +59,30 @@ namespace CinemalyticsCSharpSDK.Repository
         }
 
         /// <summary>
+        /// Gets 10 male actors sorted by highest rating
+        /// </summary>        
+        /// <returns></returns>
+        public List<Person> GetMaleActorsByHighestRating()
+        {
+            String url = "http://api.cinemalytics.in/v2/analytics/MaleActorsByHighestRating/?auth_token=" + _authToken;
+            String jsonResponse = UrlUtil.MakeGetCall(url);
+
+            return JsonConvert.DeserializeObject<List<Person>>(jsonResponse, new CountToPersonMappingConverter());
+        }
+
+        /// <summary>
+        /// Gets 10 female actors sorted by highest rating
+        /// </summary>        
+        /// <returns></returns>
+        public List<Person> GetFemaleActorsByHighestRating()
+        {
+            String url = "http://api.cinemalytics.in/v2/analytics/FemaleActorsByHighestRating/?auth_token=" + _authToken;
+            String jsonResponse = UrlUtil.MakeGetCall(url);
+
+            return JsonConvert.DeserializeObject<List<Person>>(jsonResponse, new CountToPersonMappingConverter());
+        }
+
+        /// <summary>
         /// Gets 10 male actors sorted by highest number of movies count
         /// </summary>        
         /// <returns></returns>
